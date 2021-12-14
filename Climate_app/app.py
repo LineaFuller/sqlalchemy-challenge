@@ -31,5 +31,17 @@ def precip():
         
     return jsonify(prcp_dict)
 
+@app.route("/api/v1.0/stations")
+def station():
+    station_list: session.query(func.count(Measurement.station)).all()
+
+    return jsonify(station_list)
+
+@app.route("/api/v1.0/tobs")
+# def tobs():
+
+@app.route("/api/v1.0/<start>")
+# def describe():
+
 if __name__ == "__main__":
     app.run(debug=True)
