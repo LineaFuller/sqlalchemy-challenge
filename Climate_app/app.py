@@ -1,12 +1,8 @@
 from flask import Flask, jsonify
-import numpy as np
-import pandas as pd
 import datetime as dt 
-import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, inspect, func
-from sqlalchemy.sql.expression import false
+from sqlalchemy import create_engine, func
 engine = create_engine("sqlite:///hawaii.sqlite")
 conn = engine.connect()
 Base = automap_base()
